@@ -1,20 +1,9 @@
 import Image from 'next/image';
-import {
-    Center,
-    Flex,
-    Input,
-    IconButton,
-    InputGroup,
-    InputRightElement,
-    Stack,
-    Text,
-    Button,
-    VStack, Divider, Link
-} from "@chakra-ui/react";
+import {Center, Divider, Flex, Text, VStack} from "@chakra-ui/react";
 import rafiki from '/public/images/rafiki.svg';
 import Logo from "components/Logo";
-import {AiFillEyeInvisible} from "react-icons/ai";
 import useWindowSize from "hooks/useWindowSize";
+import FormLogin from "components/FormLogin";
 
 export default function LoginPage() {
 
@@ -38,33 +27,7 @@ export default function LoginPage() {
             <Flex flex={2} flexDirection="column" bgColor="bgColor">
                 <Center flex={15} flexDirection="column" w="full">
                     <Logo lighter="DOT" bolder="MX" size="100px"/>
-                    <form>
-                        <Stack spacing={4}>
-                            <Input type="email" placeholder="Digite seu e-mail" size="lg" />
-                            <InputGroup size="lg">
-                                <Input
-                                    type="password"
-                                    placeholder='Digite sua senha'
-                                />
-                                <InputRightElement>
-                                    <IconButton
-                                        _hover={{ bg: 'transparent' }}
-                                        bg="transparent"
-                                        color="primary"
-                                        size="lg" aria-label="toggle-password">
-                                        <AiFillEyeInvisible />
-                                    </IconButton>
-                                </InputRightElement>
-                            </InputGroup>
-                            <Link>Esqueceu a senha?</Link>
-                            <br/>
-                            <Stack spacing={4}>
-                                {/*change to submit when will implement*/}
-                                <Button type="button">Acessar o sistema</Button>
-                            </Stack>
-                            <Text>Nao possui conta? <Link>Registre-se.</Link></Text>
-                        </Stack>
-                    </form>
+                    <FormLogin />
                 </Center>
                 <VStack flex={1} alignItems="flex-end" px={8}>
                     <Divider />
